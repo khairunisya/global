@@ -3,7 +3,7 @@
 # ===================================
 
 function import_string() {
-    export SCRIPT_URL='https://raw.githubusercontent.com/khairunisya/multi/main/'
+    export SCRIPT_URL='https://raw.githubusercontent.com/khairunisya/global/main/'
     export RED="\033[0;31m"
     export GREEN="\033[0;32m"
     export YELLOW="\033[0;33m"
@@ -212,7 +212,7 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
     apt install python2 -y >/dev/null 2>&1
 
     #install bbr
-    wget https://raw.githubusercontent.com/khairunisya/multi/main/bbr.sh && chmod +x bbr.sh && screen -S bbr ./bbr.sh
+    wget https://raw.githubusercontent.com/khairunisya/global/main/bbr.sh && chmod +x bbr.sh && screen -S bbr ./bbr.sh
 
     cd
 
@@ -257,8 +257,8 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
     cd
 
     cd /usr/bin
-    wget -O xp "https://raw.githubusercontent.com/khairunisya/multi/main/xp.sh"
-    wget -O clearlog "https://raw.githubusercontent.com/khairunisya/multi/main/clearlog.sh"
+    wget -O xp "https://raw.githubusercontent.com/khairunisya/global/main/xp.sh"
+    wget -O clearlog "https://raw.githubusercontent.com/khairunisya/global/main/clearlog.sh"
 
     chmod +x xp
     chmod +x clearlog
