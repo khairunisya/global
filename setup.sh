@@ -123,7 +123,7 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
     chmod +x /root/.acme.sh/acme.sh
     /root/.acme.sh/acme.sh --upgrade --auto-upgrade
     /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
-    /root/.acme.sh/acme.sh --issue -d sg1.xraymonthly.ninja -d sg1-grpc.xraymonthly.ninja -d sg1trws.xraymonthly.ninja -d sg1tr.xraymonthly.ninja -d sg1vless.xraymonthly.ninja -d sg1vless-grpc.xraymonthly.ninja -d sg1ss.xraymonthly.ninja -d sg1tr-grpc.xraymonthly.ninja --standalone -k ec-256 -ak ec-256
+    /root/.acme.sh/acme.sh --issue -d sg1.xraymonthly.ninja -d sg1-grpc.xraymonthly.ninja -d sg1trws.xraymonthly.ninja -d sg1tr.xraymonthly.ninja -d sg1vless.xraymonthly.ninja -d sg1vless-grpc.xraymonthly.ninja -d sg1tr-grpc.xraymonthly.ninja --standalone -k ec-256 -ak ec-256
     echo -e " [INFO] Successfully"
     sleep 1
 
