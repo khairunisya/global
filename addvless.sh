@@ -66,8 +66,8 @@ cat /etc/xray/config/xray/nontls.json | jq '.inbounds[1].settings.clients += [{"
 echo -e "Vless $username $exp" >>/etc/xray/vless-client.conf
 
 # // Vless Link
-vless_nontls="vless://${uuid}@${domain}:${nontls_port}?path=%2Fjrtunnel-vless&security=none&encryption=none&type=ws#${username}"
-vless_tls="vless://${uuid}@${domain}:${tls_port}?path=%2Fjrtunnel-vless&security=tls&encryption=none&type=ws#${username}"
+vless_nontls="vless://${uuid}@${domain}:${nontls_port}?path=%2Fvless&security=none&encryption=none&type=ws#${username}"
+vless_tls="vless://${uuid}@${domain}:${tls_port}?path=%2Fvless&security=tls&encryption=none&type=ws#${username}"
 vless_grpc="vless://${uuid}@${domain}:${tls_port}?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc#${username}"
 
 # // Restarting XRay Service

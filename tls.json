@@ -12,22 +12,22 @@
         "clients": [],
         "decryption": "none",
         "fallbacks": [{
-            "path": "/jrtunnel-trojan",
+            "path": "/trojan",
             "dest": 34801,
             "xver": 1
           },
           {
-            "path": "/jrtunnel-vmess",
+            "path": "/vmess",
             "dest": 34802,
             "xver": 1
           },
           {
-            "path": "/jrtunnel-vless",
+            "path": "/vless",
             "dest": 34803,
             "xver": 1
           },
           {
-            "path": "/jrtunnel-ss",
+            "path": "/ss-ws",
             "dest": 2012
           },
           {
@@ -63,7 +63,7 @@
         "security": "none",
         "wsSettings": {
           "acceptProxyProtocol": true,
-          "path": "/jrtunnel-trojan"
+          "path": "/trojan"
         }
       }
     },
@@ -80,7 +80,7 @@
         "security": "none",
         "wsSettings": {
           "acceptProxyProtocol": true,
-          "path": "/jrtunnel-vmess"
+          "path": "/vmess"
         }
       }
     },
@@ -97,7 +97,7 @@
         "security": "none",
         "wsSettings": {
           "acceptProxyProtocol": true,
-          "path": "/jrtunnel-vless"
+          "path": "/vless"
         }
       }
     },
@@ -161,7 +161,7 @@
         "network": "ws",
         "security": "none",
         "wsSettings": {
-          "path": "/jrtunnel-ss"
+          "path": "/ss-ws"
         }
       },
       "sniffing": {
