@@ -47,7 +47,7 @@ function check_architecture() {
 
 function install_requirement() {
     #wget ${SCRIPT_URL}/cf.sh && chmod +x cf.sh && ./cf.sh
-    hostname=sg2.xraymonthly.ninja
+    hostname=sg3.xraymonthly.ninja
     # Membuat Folder untuk menyimpan data utama
     mkdir -p /etc/xray/
     mkdir -p /etc/xray/core/
@@ -123,7 +123,7 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
     chmod +x /root/.acme.sh/acme.sh
     /root/.acme.sh/acme.sh --upgrade --auto-upgrade
     /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
-    /root/.acme.sh/acme.sh --issue -d sg2.xraymonthly.ninja -d sg2-grpc.xraymonthly.ninja -d sg2trws.xraymonthly.ninja -d sg2tr.xraymonthly.ninja -d sg2vless.xraymonthly.ninja -d sg2vless-grpc.xraymonthly.ninja -d sg2tr-grpc.xraymonthly.ninja --standalone -k ec-256 -ak ec-256
+    /root/.acme.sh/acme.sh --issue -d sg3.xraymonthly.ninja -d sg3-grpc.xraymonthly.ninja -d sg3trws.xraymonthly.ninja -d sg3tr.xraymonthly.ninja -d sg3vless.xraymonthly.ninja -d sg3vless-grpc.xraymonthly.ninja -d sg3tr-grpc.xraymonthly.ninja --standalone -k ec-256 -ak ec-256
     echo -e " [INFO] Successfully"
     sleep 1
 
