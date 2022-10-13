@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #AutoScript By Jrtunnel
 # Trojan
 data=( `cat /etc/xray/vmess-client.conf | grep '^Vmess' | cut -d ' ' -f 2`);
