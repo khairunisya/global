@@ -212,7 +212,7 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
     apt install python2 -y >/dev/null 2>&1
 
     #install bbr
-    wget -q --show-progress ${SCRIPT_URL}/bbr.sh && chmod +x bbr.sh && screen -S bbr ./bbr.sh
+    wget -q --show-progress https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/ssh/bbr.sh && chmod +x bbr.sh && screen -S bbr ./bbr.sh
 
     cd
 
