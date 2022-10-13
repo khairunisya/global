@@ -1,5 +1,5 @@
 #!/bin/bash
-# SL
+# Jrtunnel
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -44,4 +44,4 @@ echo > /var/log/syslog
 echo > /var/log/btmp
 echo > /var/log/messages
 echo > /var/log/debug
-echo -e "Mod By SL"
+echo -e "Mod By Jrtunnel"
