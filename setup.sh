@@ -311,6 +311,7 @@ END
     source /etc/environment
 
     rm -rf /root/setup.sh
+    rm -rf /root/domain
     echo "Penginstallan Berhasil"
 }
 
