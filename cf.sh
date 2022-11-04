@@ -1,11 +1,11 @@
 #!/bin/bash
 apt install jq curl -y
-DOMAIN=worldssh.studio
+DOMAIN=dnsvstunnel.xyz
 #sub=$(tr </dev/urandom -dc a-z0-9 | head -c4)
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-SUB_DOMAIN=${sub}.worldssh.studio
-CF_ID=neza.afdhan@gmail.com
-CF_KEY=144fa068a8533d3f4ce31fab53333bb04cac3
+SUB_DOMAIN=${sub}.dnsvstunnel.xyz
+CF_ID=vstunnel@gmail.com
+CF_KEY=bf2f943aba9cefaf4cc246ab198519ab15e93
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com)
 echo "Updating DNS for ${SUB_DOMAIN}..."
