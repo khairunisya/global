@@ -68,7 +68,7 @@ echo -e "Trojan $username $exp" >>/etc/xray/trojan-client.conf
 # // Make Configruation Link
 grpc_link="trojan://${uuid}@${domain}:${tls_port}?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc#${username}"
 tcp_tls_link="trojan://${uuid}@${domain}:${tls_port}?security=tls&headerType=none&type=tcp#${username}"
-ws_tls_link="trojan://${uuid}@${domain}:${tls_port}?path=%2Fjrtunnel-trojan&security=tls&type=ws#${username}"
+ws_tls_link="trojan://${uuid}@${domain}:${tls_port}?path=%2Ftrojan&security=tls&type=ws#${username}"
 
 # // Restarting XRay Service
 systemctl restart xray@tls
