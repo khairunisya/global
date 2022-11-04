@@ -46,8 +46,8 @@ function check_architecture() {
 }
 
 function install_requirement() {
-    #wget -q --show-progress ${SCRIPT_URL}/cf.sh && chmod +x cf.sh && ./cf.sh
-    hostname=vvip.xrayjrt.me
+    wget -q --show-progress ${SCRIPT_URL}/cf.sh && chmod +x cf.sh && ./cf.sh
+    hostname=$(cat /root/domain)
     # Membuat Folder untuk menyimpan data utama
     mkdir -p /etc/xray/
     mkdir -p /etc/xray/core/
