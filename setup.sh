@@ -132,6 +132,7 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
     # Install nginx
     apt-get install libpcre3 libpcre3-dev zlib1g-dev dbus -y
+    sudo apt install curl gnupg2 ca-certificates lsb-release debian-archive-keyring
     echo "deb http://nginx.org/packages/mainline/debian $(lsb_release -cs) nginx" |
         sudo tee /etc/apt/sources.list.d/nginx.list
     curl -fsSL https://nginx.org/keys/nginx_signing.key | apt-key add -
