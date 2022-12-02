@@ -63,44 +63,44 @@ function install_requirement() {
     apt clean -y
 
     # install wget and curl
-apt -y install wget curl
-apt -y install net-tools
+    apt -y install wget curl
+    apt -y install net-tools
 
-# Install Requirements Tools
-apt install ruby -y
-apt install python -y
-apt install make -y
-apt install cmake -y
-apt install coreutils -y
-apt install rsyslog -y
-apt install net-tools -y
-apt install zip -y
-apt install unzip -y
-apt install nano -y
-apt install sed -y
-apt install gnupg -y
-apt install gnupg1 -y
-apt install bc -y
-apt install jq -y
-apt install apt-transport-https -y
-apt install build-essential -y
-apt install dirmngr -y
-apt install libxml-parser-perl -y
-apt install neofetch -y
-apt install git -y
-apt install lsof -y
-apt install libsqlite3-dev -y
-apt install libz-dev -y
-apt install gcc -y
-apt install g++ -y
-apt install libreadline-dev -y
-apt install zlib1g-dev -y
-apt install libssl-dev -y
-apt install libssl1.0-dev -y
-apt install dos2unix -y
+    # Install Requirements Tools
+    apt install ruby -y
+    apt install python -y
+    apt install make -y
+    apt install cmake -y
+    apt install coreutils -y
+    apt install rsyslog -y
+    apt install net-tools -y
+    apt install zip -y
+    apt install unzip -y
+    apt install nano -y
+    apt install sed -y
+    apt install gnupg -y
+    apt install gnupg1 -y
+    apt install bc -y
+    apt install jq -y
+    apt install apt-transport-https -y
+    apt install build-essential -y
+    apt install dirmngr -y
+    apt install libxml-parser-perl -y
+    apt install neofetch -y
+    apt install git -y
+    apt install lsof -y
+    apt install libsqlite3-dev -y
+    apt install libz-dev -y
+    apt install gcc -y
+    apt install g++ -y
+    apt install libreadline-dev -y
+    apt install zlib1g-dev -y
+    apt install libssl-dev -y
+    apt install libssl1.0-dev -y
+    apt install dos2unix -y
 
-# set time GMT +7
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+    # set time GMT +7
+    ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
     #  Menghapus apache2 nginx sendmail ufw firewall dan exim4 untuk menghindari port nabrak
     apt remove --purge nginx apache2 sendmail ufw firewalld exim4 -y >/dev/null 2>&1
@@ -111,6 +111,52 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
     apt install build-essential apt-transport-https -y
     apt install zip unzip nano net-tools make git lsof wget curl jq bc gcc make cmake neofetch htop libssl-dev socat sed zlib1g-dev libsqlite3-dev libpcre3 libpcre3-dev libgd-dev -y
 	apt-get install uuid-runtime
+
+    wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/khairunisya/multiws/main/ssh/newudpgw"
+    chmod +x /usr/bin/badvpn-udpgw
+    sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
+    sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
+    sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500' /etc/rc.local
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
+
+
+    # install fail2ban
+    apt -y install fail2ban
+
+    # Instal DDOS Flate
+    if [ -d '/usr/local/ddos' ]; then
+        echo; echo; echo "Please un-install the previous version first"
+        exit 0
+    else
+        mkdir /usr/local/ddos
+    fi
+    clear
+    echo; echo 'Installing DOS-Deflate 0.6'; echo
+    echo; echo -n 'Downloading source files...'
+    wget -q -O /usr/local/ddos/ddos.conf http://www.inetbase.com/scripts/ddos/ddos.conf
+    echo -n '.'
+    wget -q -O /usr/local/ddos/LICENSE http://www.inetbase.com/scripts/ddos/LICENSE
+    echo -n '.'
+    wget -q -O /usr/local/ddos/ignore.ip.list http://www.inetbase.com/scripts/ddos/ignore.ip.list
+    echo -n '.'
+    wget -q -O /usr/local/ddos/ddos.sh http://www.inetbase.com/scripts/ddos/ddos.sh
+    chmod 0755 /usr/local/ddos/ddos.sh
+    cp -s /usr/local/ddos/ddos.sh /usr/local/sbin/ddos
+    echo '...done'
+    echo; echo -n 'Creating cron to run script every minute.....(Default setting)'
+    /usr/local/ddos/ddos.sh --cron > /dev/null 2>&1
+    echo '.....done'
+    echo; echo 'Installation has completed.'
+    echo 'Config file is at /usr/local/ddos/ddos.conf'
+    echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
     # Menghentikan Port 443 & 80 jika berjalan
     lsof -t -i tcp:80 -s tcp:listen | xargs kill >/dev/null 2>&1
@@ -188,6 +234,16 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
     systemctl enable xray@nontls
     systemctl start xray@nontls
     systemctl restart xray@nontls
+
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7400 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7500 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
+    screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
 
     # // Download welcome
     echo "clear" >>.profile
