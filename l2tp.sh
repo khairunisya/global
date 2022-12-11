@@ -24,9 +24,9 @@
 # - All values MUST be placed inside 'single quotes'
 # - DO NOT use these special characters within values: \ " '
 
-YOUR_IPSEC_PSK='myvpn'
-YOUR_USERNAME='aa'
-YOUR_PASSWORD='aa'
+YOUR_IPSEC_PSK='jrtunnel.com'
+YOUR_USERNAME='mamang'
+YOUR_PASSWORD='mamang'
 
 # Important notes:   https://git.io/vpnnotes
 # Setup VPN clients: https://git.io/vpnclients
@@ -182,7 +182,7 @@ apt-get -yq install fail2ban || exiterr2
 
 bigecho "Compiling and installing Libreswan..."
 
-SWAN_VER=4.1
+SWAN_VER=3.17
 swan_file="libreswan-$SWAN_VER.tar.gz"
 swan_url1="https://github.com/libreswan/libreswan/archive/v$SWAN_VER.tar.gz"
 swan_url2="https://download.libreswan.org/$swan_file"
